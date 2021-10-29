@@ -1,14 +1,20 @@
-php:
-  build: .
-  ports:
-   - "80:80"
-   - "443:443"
-  volumes:
-   - ./www:/var/www/html
+version: '3.3'
 
-db:
-  image: mysql:5.7
-  volumes:
-   - /var/lib/mysql
-  environment:
-   - 
+services:
+  php:
+    build: .
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - ./www/:/var/www/html
+    links:
+    - db
+
+  db:
+    image: mysql:5.7
+    volumes:
+    - /var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=myrootpass
+    - MYSQL_DATABASE=mydatabase

@@ -1,2 +1,2 @@
-# docker-container-php72
-Container php na versão 7.2
+# docker-container-php74
+Container php na versão 7.4 e mariadb:10.3

@@ -12,9 +12,11 @@ services:
     - db
 
   db:
-    image: mysql:5.7
+    image: mariadb:10.3
     volumes:
     - /var/lib/mysql
     environment:
-    - MYSQL_ROOT_PASSWORD=myrootpass
+    - MYSQL_ROOT_PASSWORD=toor
     - MYSQL_DATABASE=mydatabase
+    ports:
+      - 3306:3306
